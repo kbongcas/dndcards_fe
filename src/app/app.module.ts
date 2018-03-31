@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
+import { SpellsComponent } from './spells/spells.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpellsComponent
   ],
   imports: [
     BrowserModule,

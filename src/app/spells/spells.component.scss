@@ -1,0 +1,36 @@
+mat-card-header {
+    margin: auto;
+    width: 50%;
+}
+
+mat-card-title {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+mat-card-subtitle {
+    margin: auto;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.spell-card {
+  max-width: 400px;
+}
+
+#short-attr {
+    display: grid;
+    grid-template-comlumns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 4px;
+    grid-template-areas:
+        "component duratiion"
+        "range casttime";
+}
+
+.spell-card:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
