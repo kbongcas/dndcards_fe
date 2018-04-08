@@ -1,13 +1,13 @@
-<mat-grid-list cols="2">
-    <mat-grid-tile>
+<mat-grid-list cols="3" class="spell-container">
+    <mat-grid-tile *ngFor="let spell of spells" >
         <mat-card class="spell-card">
             <mat-card-header>
-                <mat-card-title>Acid Splash</mat-card-title>
+                <mat-card-title>{{spell.spellname}}</mat-card-title>
                 <mat-card-subtitle>Conjuration Cantrip</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content id="short-attr">
                     <div id="component">Components: V,S</div>
-                    <div id="duration">Duration: Instantaneous</div>
+                    <div id="duration">Duration:{{spell.duration}} </div>
                     <div id="range">Range: 60 feet</div>
                     <div id="casttime">Casting Time: 1 Action</div>
             </mat-card-content>

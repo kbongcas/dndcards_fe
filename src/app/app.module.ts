@@ -9,20 +9,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material.module';
 import { SpellsComponent } from './spells/spells.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SpellsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-      BrowserAnimationsModule,
-      MaterialModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        SpellsComponent,
+        HeaderComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

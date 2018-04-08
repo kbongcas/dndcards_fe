@@ -1,15 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-spells',
-  templateUrl: './spells.component.html',
-  styleUrls: ['./spells.component.scss']
+    selector: 'app-spells',
+    templateUrl: './spells.component.html',
+    styleUrls: ['./spells.component.scss']
 })
 export class SpellsComponent implements OnInit {
 
-  constructor() { }
+    private spells: object[];
 
-  ngOnInit() {
-  }
+    constructor() {
+        this.spells = [
+            {
+                'spellname': 'Acid Splash',
+                'duration': 'Instananous'
+            },
+            {
+                'spellname': 'SSSSSS',
+                'duration': 'Instananouiss'
+            },
+            {
+                'spellname': 'cccccc',
+                'duration': 'Instananouissddd'
+            },
+            {
+                'spellname': 'cccccc',
+                'duration': 'Instananouissddd'
+            }
+
+        ];
+    }
+
+     ngOnInit() {
+     }
 
 }
