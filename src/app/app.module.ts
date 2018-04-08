@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { SpellsComponent } from './spells/spells.component';
 import { HeaderComponent } from './header/header.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         SpellsComponent,
-        HeaderComponent
+        HeaderComponent,
+        SideNavComponent
     ],
     imports: [
         BrowserModule,
