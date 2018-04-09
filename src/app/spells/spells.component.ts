@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpellService } from '../spell-service/spell.service';
+import { Spell } from '../spell-service/spell';
 
 @Component({
     selector: 'app-spells',
@@ -7,28 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpellsComponent implements OnInit {
 
-    private spells: object[];
-
-    constructor() {
-        this.spells = [
-            {
-                'spellname': 'Acid Splash',
-                'duration': 'Instananous'
-            },
-            {
-                'spellname': 'SSSSSS',
-                'duration': 'Instananouiss'
-            },
-            {
-                'spellname': 'cccccc',
-                'duration': 'Instananouissddd'
-            },
-            {
-                'spellname': 'cccccc',
-                'duration': 'Instananouissddd'
-            }
-
-        ];
+    private spells: Spell[];
+    constructor(spellService: SpellService) {
+        spellService.getAllSpells().subscribe(spells => this.spells = spells);
     }
 
      ngOnInit() {

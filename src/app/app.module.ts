@@ -11,6 +11,10 @@ import { MaterialModule } from './material.module';
 import { SpellsComponent } from './spells/spells.component';
 import { HeaderComponent } from './header/header.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { HomeComponent } from './home/home.component';
+import { CardsComponent } from './cards/cards.component';
+import { SpellService } from './spell-service/spell.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,15 +22,18 @@ import { SideNavComponent } from './side-nav/side-nav.component';
         AppComponent,
         SpellsComponent,
         HeaderComponent,
-        SideNavComponent
+        SideNavComponent,
+        HomeComponent,
+        CardsComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MaterialModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [SpellService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

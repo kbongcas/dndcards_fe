@@ -1,15 +1,19 @@
-<mat-drawer-container class="example-container">
+<mat-drawer-container class="container">
     <mat-drawer class="side-nav-buttons" mode="side" opened="true">
-            <button mat-button color="primary">Test button 1</button>
-            <button mat-button color="primary">Test button 2</button>
-            <button mat-button color="primary">Test button 1</button>
+        <button mat-button color="primary" [ngClass]="{active: currentRoute === 'home'}">
+            <a (click) ="goToRoute('home')">
+                Home
+                <mat-icon>home</mat-icon>
+            </a>
+        </button>
+        <button mat-button color="primary" [ngClass]="{active: currentRoute === 'cards'}">
+            <a (click) ="goToRoute('cards')">
+                Cards
+                <mat-icon>filter_none</mat-icon>
+            </a>
+        </button>
     </mat-drawer>
-  <mat-drawer-content>
-      <mat-tab-group>
-          <mat-tab label="Spells">
-              <app-spells></app-spells>
-          </mat-tab>
-          <mat-tab label="Items">Content 2</mat-tab>
-      </mat-tab-group>
-  </mat-drawer-content>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
 </mat-drawer-container>

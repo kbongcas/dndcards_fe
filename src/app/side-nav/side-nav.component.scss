@@ -1,4 +1,14 @@
 .side-nav-buttons {
     display: flex;
     flex-direction: column;
+    min-width: 100px;
+    background-color: #E8EAF6;
+}
+
+.side-nav-buttons button {
+    align-self: center;
+}
+
+
+.container {
 }
