@@ -7,26 +7,21 @@
                     <mat-card-subtitle>Conjuration Cantrip</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content id="short-attr">
-                    <div id="component">Components: V,S</div>
+                    <div id="component">Components: {{spell.components}}</div>
                     <div id="duration">Duration:{{spell.duration}} </div>
-                    <div id="range">Range: 60 feet</div>
-                    <div id="casttime">Casting Time: 1 Action</div>
+                    <div id="range">Range: {{spell.range}}</div>
+                    <div id="casttime">Casting Time: {{spell.castingTime}}</div>
                 </mat-card-content>
 
-                <mat-card-content>Materials: adfadfasdfasdf</mat-card-content>
+                <mat-card-content>Materials: {{spell.materials}}</mat-card-content>
                 <mat-card-content>
-                    You hurl a bubble of acid. Choose one creature within
-                    range, or choose two creatures within range that are within 5 feet of
-                    each other. A target must succeed on a Dexterity saving throw or take
-                    1d6 acid damage.
+                    {{spell.spellDesc}}
                 </mat-card-content>
                 <mat-card-content>
-                    This spell's damage increases by 1d6 when you reach 5th level (2d6),
-                    11th level (3d6), and 17th level (4d6).
+                    {{spell.higherLevelDescOne}}
                 </mat-card-content>
                 <mat-card-content>
-                    This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level
-                    (3d6), and 17th level (4d6).
+                    {{spell.higherLevelDescTwo}}
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
