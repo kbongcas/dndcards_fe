@@ -3,6 +3,16 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+import { KeycloakConfig } from 'keycloak-angular';
+
+// Add here your keycloak setup infos
+let keycloakConfig: KeycloakConfig = {
+  url: 'http://localhost:8180/auth',
+  realm: 'dnd-cards',
+  clientId: 'dndcards-fe'
+};
+
 export const environment = {
-  production: false
+  production: false,
+  keycloak: keycloakConfig
 };

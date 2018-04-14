@@ -15,7 +15,13 @@ import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './cards/cards.component';
 import { SpellService } from './spell-service/spell.service';
 import { HttpClientModule } from '@angular/common/http';
-
+/*
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './keycloak-service/keycloak.http';
+*/
+import { APP_INITIALIZER } from '@angular/core';
+import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import { initializer } from './utils/app-init';
 
 @NgModule({
     declarations: [
@@ -31,9 +37,17 @@ import { HttpClientModule } from '@angular/common/http';
         AppRoutingModule,
         BrowserAnimationsModule,
         MaterialModule,
-        HttpClientModule
+        HttpClientModule,
+        KeycloakAngularModule
     ],
-    providers: [SpellService],
+    providers: [SpellService,
+        {
+            provide: APP_INITIALIZER,
+            useFactory: initializer,
+            multi: true,
+            deps: [KeycloakService]
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
