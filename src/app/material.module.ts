@@ -19,7 +19,7 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatSidenavModule,
         MatMenuModule,
         MatIconModule,
-        MatTabsModule
+        MatTabsModule,
     ],
     exports: [
         MatButtonModule,
@@ -30,8 +30,7 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatSidenavModule,
         MatMenuModule,
         MatIconModule,
-        MatTabsModule
-
+        MatTabsModule,
     ],
 })
 export class MaterialModule { }

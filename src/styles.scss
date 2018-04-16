@@ -6,10 +6,10 @@ body, html {
     padding: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 
     //this is for testing
-    background-color: lightblue;
-    overflow: hidden;
+    //background-color: lightblue;
 } 
 
 .site-container{
@@ -20,5 +20,5 @@ body, html {
     align-items: stretch;
 
     //this is for testing
-    background: hotpink;
+   // background: hotpink;
  }

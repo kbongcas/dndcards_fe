@@ -1,6 +1,9 @@
 <div class ="spells-tab-content">
-    <mat-grid-list cols="3" gutterSize="20px" class="spell-container">
-        <mat-grid-tile *ngFor="let spell of spells" >
+    <button mat-fab color="primary" (click)="createNewSpellCard()">
+        <mat-icon>library_add</mat-icon>
+    </button>
+    <div class="spell-container">
+        <div *ngFor="let spell of spells" >
             <mat-card class="spell-card">
                 <mat-card-header>
                     <mat-card-title>{{spell.spellName}}</mat-card-title>
@@ -24,6 +27,6 @@
                     {{spell.higherLevelDescTwo}}
                 </mat-card-content>
             </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+        </div>
+    </div>
 </div>

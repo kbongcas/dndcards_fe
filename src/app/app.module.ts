@@ -30,7 +30,7 @@ import { initializer } from './utils/app-init';
         HeaderComponent,
         SideNavComponent,
         HomeComponent,
-        CardsComponent
+        CardsComponent,
     ],
     imports: [
         BrowserModule,
@@ -48,6 +48,6 @@ import { initializer } from './utils/app-init';
             deps: [KeycloakService]
         }
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
