@@ -8,6 +8,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule, MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
     imports: [
@@ -20,6 +23,9 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatMenuModule,
         MatIconModule,
         MatTabsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     exports: [
         MatButtonModule,
@@ -31,6 +37,9 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatMenuModule,
         MatIconModule,
         MatTabsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
 })
 export class MaterialModule { }

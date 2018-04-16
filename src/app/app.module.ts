@@ -22,6 +22,8 @@ import { TokenInterceptor } from './keycloak-service/keycloak.http';
 import { APP_INITIALIZER } from '@angular/core';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
+import { SpellFormComponent } from './spell-form/spell-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [
@@ -31,6 +33,7 @@ import { initializer } from './utils/app-init';
         SideNavComponent,
         HomeComponent,
         CardsComponent,
+        SpellFormComponent
     ],
     imports: [
         BrowserModule,
@@ -38,7 +41,9 @@ import { initializer } from './utils/app-init';
         BrowserAnimationsModule,
         MaterialModule,
         HttpClientModule,
-        KeycloakAngularModule
+        KeycloakAngularModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [SpellService,
         {
@@ -49,5 +54,6 @@ import { initializer } from './utils/app-init';
         }
     ],
     bootstrap: [AppComponent],
+    entryComponents: [SpellFormComponent]
 })
 export class AppModule { }

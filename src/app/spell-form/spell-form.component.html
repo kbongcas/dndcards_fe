@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Create A Spell</h2>
+<mat-dialog-content>
+        <mat-form-field>
+          <input matInput placeholder="Spell Name">
+        </mat-form-field>
+      
+        <mat-form-field>
+          <textarea matInput placeholder="Is a ritual?"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput placeholder="Ritual Name"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <textarea matInput placeholder="Level"></textarea>
+        </mat-form-field>
+      
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Exit</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="true">Save</button>
+</mat-dialog-actions>

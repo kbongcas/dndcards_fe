@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpellService } from '../spell-service/spell.service';
 import { Spell } from '../spell-service/spell';
+import { MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { SpellFormComponent } from '../spell-form/spell-form.component';
 
 @Component({
     selector: 'app-spells',
@@ -10,10 +12,28 @@ import { Spell } from '../spell-service/spell';
 export class SpellsComponent implements OnInit {
 
     private spells: Spell[];
-    constructor(spellService: SpellService) {
+    private dialog: MatDialog;
+    constructor(spellService: SpellService, dialog: MatDialog) {
         spellService.getAllSpells().subscribe(spells => this.spells = spells);
+        this.dialog = dialog;
     }
 
+    openDialog(): void{
+
+        const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+
+        dialogConfig.data = {
+            id: 1,
+            description: 'Angular For Beginners'
+        };
+        const dialogRef = this.dialog.open(SpellFormComponent, dialogConfig);
+        dialogRef.afterClosed().subscribe(
+        data => console.log("Dialog output:", data)
+    );   
+    }
      ngOnInit() {
      }
 
