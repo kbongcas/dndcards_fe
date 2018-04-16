@@ -20,13 +20,14 @@ export class SpellFormComponent implements OnInit {
   constructor(
     fb: FormBuilder,
     dialogRef: MatDialogRef<SpellFormComponent>,
-    @Inject(MAT_DIALOG_DATA) data) {
+    @Inject(MAT_DIALOG_DATA) spell: Spell) {
 
     this.fb = fb;
     this.dialogRef = dialogRef;
-    this.description = data.description;
+    this.spell = spell;
   }
   ngOnInit() {
+    /*
     this.form = this.fb.group({
       description: [this.description, []],
       spellId: ['3231',[]],
@@ -43,14 +44,14 @@ export class SpellFormComponent implements OnInit {
       higherLevelDescOne: ['',[]],
       higherLevelDescTwo:  ['',[]]
     });
+    */
   }
 
   save() {
-    this.dialogRef.close(this.form.value);
+    this.dialogRef.close(this.spell);
   }
 
   close() {
     this.dialogRef.close();
   }
-
 }

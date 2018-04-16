@@ -13,6 +13,7 @@ export class SpellsComponent implements OnInit {
 
     private spells: Spell[];
     private dialog: MatDialog;
+    private spell: Spell;
     constructor(spellService: SpellService, dialog: MatDialog) {
         spellService.getAllSpells().subscribe(spells => this.spells = spells);
         this.dialog = dialog;
@@ -26,12 +27,11 @@ export class SpellsComponent implements OnInit {
         dialogConfig.autoFocus = true;
 
         dialogConfig.data = {
-            id: 1,
-            description: 'Angular For Beginners'
+            spell: this.spell
         };
         const dialogRef = this.dialog.open(SpellFormComponent, dialogConfig);
         dialogRef.afterClosed().subscribe(
-        data => console.log("Dialog output:", data)
+        spell => console.log(spell)
     );   
     }
      ngOnInit() {
