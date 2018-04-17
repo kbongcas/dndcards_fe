@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class SpellService {
 
     private url: string  = 'http://localhost:8080/api/v1/Spell';
+    private urlAdd: string  = 'http://localhost:8080/api/v1/Spell/create';
     spells: Spell[];
     private httpClient: HttpClient;
 
@@ -17,5 +18,10 @@ export class SpellService {
 
     getAllSpells(): Observable<Spell[]> {
         return this.httpClient.get<Spell[]>(this.url);
+    }
+
+    createNewSpell(spell: Spell): Observable<Spell> {
+        console.log(spell);
+        return this.httpClient.post<Spell>(this.urlAdd,spell);
     }
 }

@@ -1,7 +1,7 @@
 <h2 mat-dialog-title>Create A Spell</h2>
 <mat-dialog-content>
         <mat-form-field>
-          <input matInput [(ngModel)]="spell.id" placeholder="Spell ID">
+          <input matInput [(ngModel)]="spell.spellId" placeholder="Spell ID">
         </mat-form-field>
         <mat-form-field>
           <input matInput [(ngModel)]="spell.spellName" placeholder="Spell Name">
@@ -41,7 +41,6 @@
         </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Exit</button>
-  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button mat-button [mat-dialog-close]="spell" cdkFocusInitial>Save</button>
+    <button mat-button (click)="close()">Exit</button>
+    <button mat-button [mat-dialog-close]="spell" cdkFocusInitial>Ok</button>
 </mat-dialog-actions>
