@@ -1,17 +1,18 @@
 <mat-drawer-container class="d-container" fullscreen>
-    <mat-drawer class="side-nav-buttons" mode="side" opened="true">
-        <button mat-button color="primary" [ngClass]="{active: currentRoute === 'home'}">
-            <a (click) ="goToRoute('home')">
-                Home
-                <mat-icon>home</mat-icon>
-            </a>
-        </button>
-        <button mat-button color="primary" [ngClass]="{active: currentRoute === 'cards'}">
-            <a (click) ="goToRoute('cards')">
-                Cards
+    <mat-drawer  mode="side" opened="true">
+        <div id="profile">
+            <app-side-nav-profile></app-side-nav-profile>
+        </div>
+        <div id="side-nav-buttons">
+            <a mat-button routerLink='home'>
+               Home
                 <mat-icon>filter_none</mat-icon>
             </a>
-        </button>
+            <a mat-button routerLink='cards'>
+               Cards
+                <mat-icon>filter_none</mat-icon>
+            </a>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
         <app-header></app-header>

@@ -23,7 +23,8 @@ import { APP_INITIALIZER } from '@angular/core';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
 import { SpellFormComponent } from './spell-form/spell-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.component'
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
         SideNavComponent,
         HomeComponent,
         CardsComponent,
-        SpellFormComponent
+        SpellFormComponent,
+        SideNavProfileComponent
     ],
     imports: [
         BrowserModule,

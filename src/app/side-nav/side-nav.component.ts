@@ -21,6 +21,7 @@ export class SideNavComponent implements OnInit {
         this.router = router;
     }
 
+    /*
     goToRoute(url: String): void {
         this.router.navigate([url]);
         this.router.events
@@ -37,6 +38,7 @@ export class SideNavComponent implements OnInit {
            this.currentRoute = 'home';
        }
     }
+    */
 
     ngOnInit() {
     }

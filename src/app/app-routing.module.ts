@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SpellsComponent } from './spells/spells.component';
 import { CardsComponent  } from './cards/cards.component';
 import { AppComponent } from './app.component';
+import { AppAuthGuard } from './keycloak-service/keycloak.authguard';
 
 const routes: Routes = [];
 
@@ -21,10 +22,12 @@ const routes: Routes = [];
             },
             {
                 path: 'cards',
-                component: CardsComponent
+                component: CardsComponent,
+                canActivate: [AppAuthGuard]
             }
         ])],
-  exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AppAuthGuard]
 })
 export class AppRoutingModule {
 }

@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   userDetails: KeycloakProfile;
 
-  constructor(private keycloakService: KeycloakService) { 
+  constructor(private keycloakService: KeycloakService) {
   }
 
   async ngOnInit() {
