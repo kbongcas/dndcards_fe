@@ -12,7 +12,6 @@ import {FormControl, Validators} from '@angular/forms';
 export class SpellFormComponent implements OnInit {
 
   form: FormGroup;
-  description: string;
   fb: FormBuilder;
   dialogRef: MatDialogRef<SpellFormComponent>;
   spell: Spell;

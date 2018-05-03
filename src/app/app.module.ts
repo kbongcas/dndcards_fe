@@ -24,7 +24,8 @@ import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
 import { SpellFormComponent } from './spell-form/spell-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.component'
+import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.component';
+import { SpellViewComponent } from './spell-view/spell-view.component'
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.com
         HomeComponent,
         CardsComponent,
         SpellFormComponent,
-        SideNavProfileComponent
+        SideNavProfileComponent,
+        SpellViewComponent
     ],
     imports: [
         BrowserModule,
@@ -56,6 +58,6 @@ import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.com
         }
     ],
     bootstrap: [AppComponent],
-    entryComponents: [SpellFormComponent]
+    entryComponents: [SpellFormComponent, SpellViewComponent]
 })
 export class AppModule { }

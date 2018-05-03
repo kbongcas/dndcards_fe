@@ -1,32 +1,32 @@
 <div class ="spells-tab-content">
-    <button mat-fab class="new-spell-button" color="primary" (click)="openDialog()">
+    <button mat-fab class="new-spell-button" color="primary" (click)="openCreateSpellDialog()">
         <mat-icon>library_add</mat-icon>
     </button>
-    <div class="spell-container">
-        <div *ngFor="let spell of spells" >
-            <mat-card class="spell-card">
-                <mat-card-header>
-                    <mat-card-title>{{spell.spellName}}</mat-card-title>
-                    <mat-card-subtitle>Conjuration Cantrip</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content id="short-attr">
-                    <div id="component">Components: {{spell.components}}</div>
-                    <div id="duration">Duration:{{spell.duration}} </div>
-                    <div id="range">Range: {{spell.range}}</div>
-                    <div id="casttime">Casting Time: {{spell.castingTime}}</div>
-                </mat-card-content>
-
-                <mat-card-content>Materials: {{spell.materials}}</mat-card-content>
-                <mat-card-content>
-                    {{spell.spellDesc}}
-                </mat-card-content>
-                <mat-card-content>
-                    {{spell.higherLevelDescOne}}
-                </mat-card-content>
-                <mat-card-content>
-                    {{spell.higherLevelDescTwo}}
-                </mat-card-content>
+    <mat-grid-list class="mat-grid-list" cols="3" rowHeight="440px" gutterSize="10px">
+        <mat-grid-tile class="mat-card-container" *ngFor="let spell of spells" >
+            <mat-card class="mat-card" (click)="openViewSpellDialog(spell)">
+                <div class="spell-content">
+                    <mat-card-header class="mat-card-header">
+                        <mat-card-title id="title">{{spell.spellName}}</mat-card-title>
+                        <span class="spacer" ></span>
+                        <mat-card-actions class="mat-card-buttons">
+                                <button mat-fab class="edit-button" color="primary" (click)="openEditSpellDialog(spell)">
+                                <mat-icon>edit_mode</mat-icon>
+                                </button>
+                        </mat-card-actions>
+                    </mat-card-header>
+                    <mat-card-content class="mat-card-content">
+                        <div id="component">Components: {{spell.components}}</div>
+                        <div id="duration">Duration:{{spell.duration}}</div>
+                        <div id="range">Range: {{spell.range}}</div>
+                        <div id="casttime">Casting Time: {{spell.castingTime}}</div>
+                        <div id="materials">Materials: {{spell.materials}}</div>
+                        <div id="spellDesc">{{spell.spellDesc}}</div>
+                        <div id="higherLevelDescOne">{{spell.higherLevelDescOne}}</div>
+                        <div id="higherLevelDescTwo">{{spell.higherLevelDescTwo}}</div>
+                    </mat-card-content>
+                </div>
             </mat-card>
-        </div>
-    </div>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>
