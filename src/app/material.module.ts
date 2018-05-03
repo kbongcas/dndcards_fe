@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {MatInputModule} from '@angular/material/input';
         MatTabsModule,
         MatDialogModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatListModule
     ],
     exports: [
         MatButtonModule,
@@ -39,7 +41,8 @@ import {MatInputModule} from '@angular/material/input';
         MatTabsModule,
         MatDialogModule,
         MatFormFieldModule,
-        MatInputModule
+        MatInputModule,
+        MatListModule
     ],
 })
 export class MaterialModule { }
