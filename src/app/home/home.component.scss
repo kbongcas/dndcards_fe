@@ -1,0 +1,15 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.upper-container {
+    background: white;
+    flex: 1;
+}
+
+.lower-container {
+    background: blue;
+    flex: 2;
+}

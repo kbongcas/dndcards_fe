@@ -8,12 +8,6 @@
                 <div class="spell-content">
                     <mat-card-header class="mat-card-header">
                         <mat-card-title id="title">{{spell.spellName}}</mat-card-title>
-                        <span class="spacer" ></span>
-                        <mat-card-actions class="mat-card-buttons">
-                                <button mat-fab class="edit-button" color="primary" (click)="openEditSpellDialog(spell)">
-                                <mat-icon>edit_mode</mat-icon>
-                                </button>
-                        </mat-card-actions>
                     </mat-card-header>
                     <mat-card-content class="mat-card-content">
                         <div id="component">Components: {{spell.components}}</div>
@@ -25,6 +19,13 @@
                         <div id="higherLevelDescOne">{{spell.higherLevelDescOne}}</div>
                         <div id="higherLevelDescTwo">{{spell.higherLevelDescTwo}}</div>
                     </mat-card-content>
+                    <!--
+                    <mat-card-actions class="mat-card-buttons">
+                                <button mat-fab class="edit-button" color="primary" (click)="openEditSpellDialog(spell)">
+                                <mat-icon>edit_mode</mat-icon>
+                                </button>
+                    </mat-card-actions>
+                    -->
                 </div>
             </mat-card>
         </mat-grid-tile>
