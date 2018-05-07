@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Spell } from '../spell-service/spell';
 import {FormControl, Validators} from '@angular/forms';
+import { SpellService } from '../spell-service/spell.service';
 
 @Component({
   selector: 'app-spell-form',
@@ -15,15 +16,29 @@ export class SpellFormComponent implements OnInit {
   fb: FormBuilder;
   dialogRef: MatDialogRef<SpellFormComponent>;
   spell: Spell;
+  spellId: Number;
+  spellService: SpellService;
+  isDisabled: boolean;
 
   constructor(
     fb: FormBuilder,
     dialogRef: MatDialogRef<SpellFormComponent>,
-    @Inject(MAT_DIALOG_DATA) spell: Spell) {
+    @Inject(MAT_DIALOG_DATA) spellId: Number,
+    spellService: SpellService) {
 
+    this.spellService = spellService;
+    this.spellId = spellId;
+
+    if (spellId) {
+      this.spellService.getSpellById(this.spellId).subscribe(
+          spell => this.spell = spell,
+       );
+    } else {
+        this.spell = new Spell();
+    }
     this.fb = fb;
     this.dialogRef = dialogRef;
-    this.spell = spell;
+    this.isDisabled = false;
   }
   ngOnInit() {
     /*
@@ -47,7 +62,14 @@ export class SpellFormComponent implements OnInit {
   }
 
   save() {
-    this.dialogRef.close(this.spell);
+    this.isDisabled = true;
+    if (this.spellId) {
+      this.spellService.updatePost(this.spellId, this.spell)
+          .subscribe(spell => this.dialogRef.close(spell));
+    } else {
+        this.spellService.createNewSpell(this.spell)
+            .subscribe(spell => this.dialogRef.close());
+    }
   }
 
   close() {

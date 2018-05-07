@@ -30,15 +30,13 @@ export class SpellViewComponent implements OnInit {
   }
 
   openEditSpellDialog(spell: Spell): void{
-      this.spell = spell;
-      const dialogConfig = new MatDialogConfig();
 
+      const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
-
-      dialogConfig.data =this.spell;
-      const dialogRef = this.dialog.open(SpellFormComponent, dialogConfig);
+      dialogConfig.data =this.spell.spellId;
+      const dialogRef = this.dialog.open(SpellFormComponent, dialogConfig)
       dialogRef.afterClosed().subscribe(
-      spell => this.dialogRef.close(this.spell))
+        spell => this.dialogRef.close(spell));
   }
 }
