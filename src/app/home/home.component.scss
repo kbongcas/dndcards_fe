@@ -5,10 +5,13 @@
 }
 
 .upper-container {
-    background: white;
+    background: #282B33;
     flex: 1;
 }
 
+.site-name {
+    margin: auto;
+}
 .lower-container {
     background: blue;
     flex: 2;
