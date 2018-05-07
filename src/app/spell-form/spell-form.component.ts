@@ -19,22 +19,25 @@ export class SpellFormComponent implements OnInit {
   spellId: Number;
   spellService: SpellService;
   isDisabled: boolean;
+  isEditing: boolean;
 
   constructor(
     fb: FormBuilder,
     dialogRef: MatDialogRef<SpellFormComponent>,
     @Inject(MAT_DIALOG_DATA) spellId: Number,
     spellService: SpellService) {
-
+    
+    this.isEditing = false;
     this.spellService = spellService;
     this.spellId = spellId;
 
     if (spellId) {
+      this.isEditing = true;
       this.spellService.getSpellById(this.spellId).subscribe(
           spell => this.spell = spell,
        );
     } else {
-        this.spell = new Spell();
+      this.spell = new Spell();
     }
     this.fb = fb;
     this.dialogRef = dialogRef;
@@ -64,7 +67,7 @@ export class SpellFormComponent implements OnInit {
   save() {
     this.isDisabled = true;
     if (this.spellId) {
-      this.spellService.updatePost(this.spellId, this.spell)
+      this.spellService.updateSpell(this.spellId, this.spell)
           .subscribe(spell => this.dialogRef.close(spell));
     } else {
         this.spellService.createNewSpell(this.spell)

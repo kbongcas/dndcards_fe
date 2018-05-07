@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog, MatDialogConfig } from '@angu
 import { Spell } from '../spell-service/spell';
 import {FormControl, Validators, FormBuilder} from '@angular/forms';
 import { SpellFormComponent } from '../spell-form/spell-form.component';
+import { SpellService } from '../spell-service/spell.service';
 
 @Component({
   selector: 'app-spell-view',
@@ -14,13 +15,16 @@ export class SpellViewComponent implements OnInit {
   dialogRef: MatDialogRef<SpellViewComponent>;
   spell: Spell;
   dialog: MatDialog;
+  spellService: SpellService;
   constructor(
     dialog: MatDialog,
     dialogRef: MatDialogRef<SpellViewComponent>,
-    @Inject(MAT_DIALOG_DATA) spell: Spell) {
+    @Inject(MAT_DIALOG_DATA) spell: Spell,
+    spellService: SpellService) {
     this.dialogRef = dialogRef;
     this.spell = spell;
     this.dialog = dialog;
+    this.spellService = spellService;
   }
   ngOnInit() {
   }
@@ -38,5 +42,11 @@ export class SpellViewComponent implements OnInit {
       const dialogRef = this.dialog.open(SpellFormComponent, dialogConfig)
       dialogRef.afterClosed().subscribe(
         spell => this.dialogRef.close(spell));
+  }
+
+  deleteSpell(spell: Spell): void{
+      this.spellService.deleteSpell(spell.spellId).subscribe(
+        spell => this.dialogRef.close(spell)
+      );
   }
 }

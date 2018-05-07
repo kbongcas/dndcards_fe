@@ -1,4 +1,9 @@
-<h2 mat-dialog-title>Create A Spell</h2>
+<div *ngIf="isEditing;else other_content">
+  <h2 mat-dialog-title>Edit A Spell</h2>
+</div>
+<ng-template #other_content>
+  <h2 mat-dialog-title>Create A Spell</h2>
+</ng-template>
 <mat-dialog-content>
         <mat-form-field>
           <input matInput [(ngModel)]="spell.spellName" placeholder="Spell Name">

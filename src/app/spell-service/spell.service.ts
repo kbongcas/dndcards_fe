@@ -25,7 +25,10 @@ export class SpellService {
     createNewSpell(spell: Spell): Observable<Spell> {
         return this.httpClient.post<Spell>(this.urlAdd,spell);
     }
-    updatePost(spellId: Number, spell: Spell): Observable<Spell> {
+    updateSpell(spellId: Number, spell: Spell): Observable<Spell> {
         return this.httpClient.put<Spell>(`${this.url}/${spellId}`, spell);
+    }
+    deleteSpell(spellId: Number): Observable<Spell> {
+        return this.httpClient.delete<Spell>(`${this.url}/${spellId}`);
     }
 }
