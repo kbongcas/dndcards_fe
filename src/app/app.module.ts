@@ -25,7 +25,12 @@ import { initializer } from './utils/app-init';
 import { SpellFormComponent } from './spell-form/spell-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SideNavProfileComponent } from './side-nav-profile/side-nav-profile.component';
-import { SpellViewComponent } from './spell-view/spell-view.component'
+import { SpellViewComponent } from './spell-view/spell-view.component';
+import { ItemsComponent } from './items/items.component';
+import { ItemService } from './item-service/item.service';
+
+import { ItemFormComponent } from './item-form/item-form.component';
+import { ItemViewComponent } from './item-view/item-view.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +42,10 @@ import { SpellViewComponent } from './spell-view/spell-view.component'
         CardsComponent,
         SpellFormComponent,
         SideNavProfileComponent,
-        SpellViewComponent
+        SpellViewComponent,
+        ItemsComponent,
+        ItemViewComponent,
+        ItemFormComponent
     ],
     imports: [
         BrowserModule,
@@ -49,7 +57,9 @@ import { SpellViewComponent } from './spell-view/spell-view.component'
         FormsModule,
         ReactiveFormsModule
     ],
-    providers: [SpellService,
+    providers: [
+        SpellService,
+        ItemService,
         {
             provide: APP_INITIALIZER,
             useFactory: initializer,
@@ -58,6 +68,11 @@ import { SpellViewComponent } from './spell-view/spell-view.component'
         }
     ],
     bootstrap: [AppComponent],
-    entryComponents: [SpellFormComponent, SpellViewComponent]
+    entryComponents: [
+        SpellFormComponent, 
+        SpellViewComponent,
+        ItemViewComponent,
+        ItemFormComponent
+    ]
 })
 export class AppModule { }

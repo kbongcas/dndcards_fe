@@ -1,0 +1,23 @@
+
+<mat-dialog-content>
+        <div>
+          {{item.itemName}}
+        </div>
+        <div>
+           {{item.itemType}}
+        </div>
+        <div>
+          {{item.itemCost}}
+        </div>
+        <div>
+          {{item.itemWeight}}
+        </div>
+        <div>
+          {{item.itemDesc}}
+        </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="close()">Exit</button>
+    <button mat-button (click)="openEditItemDialog(item)">Edit</button>
+    <button mat-button (click)="deleteItem(item)">Delete</button>
+</mat-dialog-actions>
