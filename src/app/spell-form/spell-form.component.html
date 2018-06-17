@@ -1,0 +1,48 @@
+<div *ngIf="isEditing;else other_content">
+  <h2 mat-dialog-title>Edit A Spell</h2>
+</div>
+<ng-template #other_content>
+  <h2 mat-dialog-title>Create A Spell</h2>
+</ng-template>
+<mat-dialog-content>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.spellName" placeholder="Spell Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.isRitual" placeholder="True">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.ritualName" placeholder="Ritual Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.level" placeholder="Level">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.castingTime" placeholder="Casting Time">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.range" placeholder="Range">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.duration" placeholder="Duration">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.components" placeholder="Components">      
+        </mat-form-field>
+         <mat-form-field>
+          <input matInput [(ngModel)]="spell.materials" placeholder="Materials">      
+        </mat-form-field>
+         <mat-form-field>
+          <input matInput [(ngModel)]="spell.spellDesc" placeholder="Description">      
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.higherLevelDescOne" placeholder="Higher Level Desc">      
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="spell.higherLevelDescTwo" placeholder="Higer Level Desc2">      
+        </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="close()">Exit</button>
+    <button mat-button [disabled]="isDisabled" (click)="save()">Save</button>
+</mat-dialog-actions>

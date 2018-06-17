@@ -1,0 +1,29 @@
+<div class ="items-tab-content">
+    <button mat-fab class="new-item-button" color="primary" (click)="openCreateItemDialog()">
+        <mat-icon>library_add</mat-icon>
+    </button>
+    <mat-grid-list class="mat-grid-list" cols="3" rowHeight="440px" gutterSize="10px">
+        <mat-grid-tile class="mat-card-container" *ngFor="let item of items" >
+            <mat-card class="mat-card" (click)="openViewItemDialog(item)">
+                <div class="item-content">
+                    <mat-card-header class="mat-card-header">
+                        <mat-card-title id="title">{{item.itemName}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="mat-card-content">
+                        <div id="itemType">Type: {{item.itemType}}</div>
+                        <div id="itemCost">Cost: {{item.itemCost}}</div>
+                        <div id="itemWeight">Weight: {{item.itemWeight}}</div>
+                        <div id="itemDesc">{{item.itemDesc}}</div>
+                    </mat-card-content>
+                    <!--
+                    <mat-card-actions class="mat-card-buttons">
+                                <button mat-fab class="edit-button" color="primary" (click)="openEditItemDialog(item)">
+                                <mat-icon>edit_mode</mat-icon>
+                                </button>
+                    </mat-card-actions>
+                    -->
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

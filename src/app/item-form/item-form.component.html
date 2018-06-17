@@ -1,0 +1,28 @@
+<div *ngIf="isEditing;else other_content">
+  <h2 mat-dialog-title>Edit A Item</h2>
+</div>
+<ng-template #other_content>
+  <h2 mat-dialog-title>Create A Item</h2>
+</ng-template>
+<mat-dialog-content>
+        <mat-form-field>
+          <input matInput [(ngModel)]="item.itemName" placeholder="Item Name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="item.itemType" placeholder="Item Type">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="item.itemCost" placeholder="Item Cost">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="item.itemWeight" placeholder="Item Weight">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="item.itemDesc" placeholder="Item Description">
+        </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="close()">Exit</button>
+    <button mat-button [disabled]="isDisabled" (click)="save()">Save</button>
+</mat-dialog-actions>
+

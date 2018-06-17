@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container" flex>
+    <mat-sidenav class="mat-sidenav" mode="side" opened="true">
+        <mat-nav-list class="mat-nav-list">
+                <button mat-menu-item class="sidenav-btn" routerLink="home">
+                        <mat-icon class="sidenav-icon">home</mat-icon>
+                         Home
+                </button>
+                <button mat-menu-item class="sidenav-btn" routerLink="cards">
+                        <mat-icon class="sidenav-icon">filter_none</mat-icon> 
+                         Cards
+                </button>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

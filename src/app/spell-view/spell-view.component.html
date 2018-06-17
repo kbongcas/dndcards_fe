@@ -1,0 +1,43 @@
+<mat-dialog-content>
+        <div>
+          {{spell.spellName}}
+        </div>
+        <div>
+           {{spell.isRitual}}
+        </div>
+        <div>
+          {{spell.ritualName}}
+        </div>
+        <div>
+          {{spell.level}}
+        </div>
+        <div>
+          {{spell.castingTime}}
+        </div>
+        <div>
+          {{spell.range}}
+        </div>
+        <div>
+          {{spell.duration}}
+        </div>
+        <div>
+          {{spell.components}}
+        </div>
+         <div>
+          {{spell.materials}}
+        </div>
+         <div>
+          {{spell.spellDesc}}
+        </div>
+        <div>
+          {{spell.higherLevelDescOne}}
+        </div>
+        <div>
+          {{spell.higherLevelDescTwo}}
+        </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="close()">Exit</button>
+    <button mat-button (click)="openEditSpellDialog(spell)">Edit</button>
+    <button mat-button (click)="deleteSpell(spell)">Delete</button>
+</mat-dialog-actions>

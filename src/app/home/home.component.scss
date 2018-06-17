@@ -1,0 +1,18 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.upper-container {
+    background: #282B33;
+    flex: 1;
+}
+
+.site-name {
+    margin: auto;
+}
+.lower-container {
+    background: blue;
+    flex: 2;
+}
