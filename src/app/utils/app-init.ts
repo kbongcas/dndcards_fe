@@ -9,10 +9,13 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
         await keycloak.init({
           config: environment.keycloak,
           initOptions: {
-            onLoad: 'login-required',
+            //onLoad: 'login-required',
             checkLoginIframe: false
           },
-          bearerExcludedUrls: []
+          bearerExcludedUrls: [
+            '/home',
+            ''
+          ]
         });
         resolve();
       } catch (error) {

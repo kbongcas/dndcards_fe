@@ -12,7 +12,7 @@ const routes: Routes = [];
         RouterModule.forRoot([
             {
                 path: 'home',
-                component: HomeComponent
+                component: HomeComponent,
             },
             {
                path: '',
