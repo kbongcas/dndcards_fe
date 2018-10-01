@@ -13,7 +13,8 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
             //checkLoginIframe: false
           },
           bearerExcludedUrls: [
-            "home"
+            "home",
+            "cards"
           ]
         });
         resolve();

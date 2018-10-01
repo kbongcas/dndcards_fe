@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { SpellsComponent } from './spells/spells.component';
 import { CardsComponent  } from './cards/cards.component';
 import { AppComponent } from './app.component';
-import { AppAuthGuard } from './keycloak-service/keycloak.authguard';
 
 const routes: Routes = [
             {
@@ -28,7 +27,7 @@ const routes: Routes = [
         RouterModule.forRoot( routes )
     ],
     exports: [RouterModule],
-    providers: [AppAuthGuard]
+    providers: []
 })
 export class AppRoutingModule {
 }
