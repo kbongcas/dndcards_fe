@@ -7,14 +7,14 @@ export class AppAuthGuard extends KeycloakAuthGuard {
   constructor(protected router: Router, protected keycloakAngular: KeycloakService) {
     super(router, keycloakAngular);
   }
-
   isAccessAllowed(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     return new Promise(async (resolve, reject) => {
       if (!this.authenticated) {
         this.keycloakAngular.login();
         return;
       }
-
+      
+      /*
       const requiredRoles = route.data.roles;
       if (!requiredRoles || requiredRoles.length === 0) {
         return resolve(true);
@@ -30,7 +30,7 @@ export class AppAuthGuard extends KeycloakAuthGuard {
           }
         }
         resolve(granted);
-      }
+      }*/
     });
   }
 }

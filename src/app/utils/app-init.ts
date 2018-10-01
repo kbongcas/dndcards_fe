@@ -10,11 +10,11 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
           config: environment.keycloak,
           initOptions: {
             //onLoad: 'login-required',
-            checkLoginIframe: false
+            //checkLoginIframe: false
           },
           bearerExcludedUrls: [
-            '/home',
-            ''
+            "home",
+            "cards"
           ]
         });
         resolve();

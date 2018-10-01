@@ -3,7 +3,7 @@ import { SpellService } from '../spell-service/spell.service';
 import { Spell } from '../spell-service/spell';
 import { MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { SpellFormComponent } from '../spell-form/spell-form.component';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { SpellViewComponent } from '../spell-view/spell-view.component';
 import { Router } from '@angular/router';
 

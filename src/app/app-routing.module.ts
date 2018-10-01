@@ -5,11 +5,7 @@ import { SpellsComponent } from './spells/spells.component';
 import { CardsComponent  } from './cards/cards.component';
 import { AppComponent } from './app.component';
 
-const routes: Routes = [];
-
-@NgModule({
-    imports: [
-        RouterModule.forRoot([
+const routes: Routes = [
             {
                 path: 'home',
                 component: HomeComponent,
@@ -17,13 +13,19 @@ const routes: Routes = [];
             {
                path: '',
                redirectTo: 'home',
-               pathMatch: 'full'
+               pathMatch: 'full',
             },
             {
                 path: 'cards',
                 component: CardsComponent,
             }
-        ])],
+];
+
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot( routes )
+    ],
     exports: [RouterModule],
     providers: []
 })

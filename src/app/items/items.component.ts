@@ -3,7 +3,7 @@ import { ItemService } from '../item-service/item.service';
 import { Item } from '../item-service/item';
 import { MatDialog, MatDialogConfig} from '@angular/material/dialog';
 import { ItemFormComponent } from '../item-form/item-form.component';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ItemViewComponent } from '../item-view/item-view.component';
 import { Router } from '@angular/router';
 
